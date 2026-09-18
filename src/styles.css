@@ -1,0 +1,176 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * FlowFix design system — clean light-first identity.
+ * Near-black text, cool gray secondary, subtle electric blue accent,
+ * very light borders, generous whitespace.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-soft: var(--accent-soft);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans:
+    "Inter Tight", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --shadow-card: 0 1px 2px oklch(0.2 0.02 265 / 0.04), 0 8px 24px oklch(0.2 0.02 265 / 0.05);
+  --shadow-lift: 0 2px 4px oklch(0.2 0.02 265 / 0.05), 0 16px 40px oklch(0.2 0.02 265 / 0.08);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --surface: oklch(0.985 0.002 265);
+  --foreground: oklch(0.19 0.012 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.012 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.012 265);
+  --primary: oklch(0.19 0.012 265);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.97 0.003 265);
+  --secondary-foreground: oklch(0.19 0.012 265);
+  --muted: oklch(0.972 0.003 265);
+  --muted-foreground: oklch(0.56 0.018 265);
+  --accent: oklch(0.55 0.23 262);
+  --accent-foreground: oklch(0.99 0 0);
+  --accent-soft: oklch(0.965 0.02 262);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.935 0.004 265);
+  --border-strong: oklch(0.885 0.006 265);
+  --input: oklch(0.925 0.004 265);
+  --ring: oklch(0.55 0.23 262);
+  --chart-1: oklch(0.55 0.23 262);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0.002 265);
+  --sidebar-foreground: oklch(0.19 0.012 265);
+  --sidebar-primary: oklch(0.19 0.012 265);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.97 0.003 265);
+  --sidebar-accent-foreground: oklch(0.19 0.012 265);
+  --sidebar-border: oklch(0.935 0.004 265);
+  --sidebar-ring: oklch(0.55 0.23 262);
+}
+
+.dark {
+  --background: oklch(0.17 0.012 265);
+  --surface: oklch(0.21 0.014 265);
+  --foreground: oklch(0.98 0.002 265);
+  --card: oklch(0.21 0.014 265);
+  --card-foreground: oklch(0.98 0.002 265);
+  --popover: oklch(0.21 0.014 265);
+  --popover-foreground: oklch(0.98 0.002 265);
+  --primary: oklch(0.98 0.002 265);
+  --primary-foreground: oklch(0.19 0.012 265);
+  --secondary: oklch(0.26 0.014 265);
+  --secondary-foreground: oklch(0.98 0.002 265);
+  --muted: oklch(0.26 0.014 265);
+  --muted-foreground: oklch(0.72 0.012 265);
+  --accent: oklch(0.62 0.21 262);
+  --accent-foreground: oklch(0.99 0 0);
+  --accent-soft: oklch(0.28 0.05 262);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --border-strong: oklch(1 0 0 / 18%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.62 0.21 262);
+  --sidebar: oklch(0.21 0.014 265);
+  --sidebar-foreground: oklch(0.98 0.002 265);
+  --sidebar-primary: oklch(0.62 0.21 262);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.26 0.014 265);
+  --sidebar-accent-foreground: oklch(0.98 0.002 265);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.62 0.21 262);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.025em;
+  }
+}
+
+@utility container-tight {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: 1.5rem;
+}
+
+@utility grid-backdrop {
+  background-image:
+    linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 10%, transparent 75%);
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
